@@ -3,7 +3,7 @@ var path = require("path");
 var bodyParser = require('bpdy-parser');
 var mongo = require('mongoose');
 
-var db = mongo.connect("mongodb://http://localhost:4200/", function(err, response){
+var db = mongo.connect("mongodb://https://pathoduxchat.firebaseapp.com/", function(err, response){
     if(err){
         console.log(err);
     }else{
@@ -17,7 +17,7 @@ app.use(bodyparser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(function (req, res, next){
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Origin', 'https://pathoduxchat.firebaseapp.com/');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type');
     res.setHeader('Access-Allow-Allow-credentials', true);
